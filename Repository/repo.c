@@ -60,7 +60,7 @@ void	*read_from_file()
 		}
 		value[k] = 0;
 		exp = set_expense(atoi(id), asign_date(date), type, atoi(value));
-		add_elem(vector, exp);
+		add_elem(vector, exp, vector->size);
 	}
 	return (vector);
 }
@@ -92,7 +92,7 @@ int		add_to_vector(t_expense *cur_exp, int pos)
 
 	vect = read_from_file();
 	i = 0;
-	while (i < vect->size)
+	while (i < vect->size && pos == -1)
 	{
 		exp = vect->elemente[i];
 		if (exp->id == exp->id)

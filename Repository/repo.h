@@ -12,6 +12,6 @@
 #include "../Utils/dynamic_vector.h"
 
 t_vector	*get_all_exp_repo();
-int		add_to_vector(t_expense *exp);
+int		add_to_vector(t_expense *exp, int pos);
 
 #endif

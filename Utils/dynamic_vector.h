@@ -13,6 +13,6 @@ typedef struct	s_vector
 }		t_vector;
 
 t_vector	*create_vector();
-void		add_elem(t_vector *vect, Elem element);
+void		add_elem(t_vector *vect, Elem element, int pos);
 void		free_vector(t_vector *vect);
 #endif

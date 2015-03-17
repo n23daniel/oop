@@ -54,3 +54,44 @@ void	add_error(char ***errors, char *error)
 		i++;
 	(*errors)[i] = strdup(error);
 }
+
+void	print_vector(t_vector *vect)
+{
+	t_expense	*e;
+	t_date		*d;
+	int		i;
+
+	i = 0;
+	while (i < vect->size)
+	{
+		e = (t_expense *)vect->elemente[i];
+		d = e->date;
+		printf("%d  |  %d-%d-%d  |  %s  |  %d\n", e->id, d->day, d->month, d->year, e->type, e->value);
+		i++;
+	}
+}
+
+void	add_to_found_list(int **found_list, int found)
+{
+	int	i;
+
+	i = 0;
+	while ((*found_list)[i] != -1)
+		i++;
+	(*found_list)[i] = found;
+	(*found_list)[i + 1] = -1;
+}
+
+int	search_found_list(int *found_list, int found)
+{
+	int	i;
+
+	i = 0;
+	while (found_list[i] != -1)
+	{
+		if (found_list[i] == found)
+			return (1);
+		i++;
+	}
+	return (0);
+}

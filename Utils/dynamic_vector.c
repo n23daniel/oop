@@ -22,7 +22,7 @@ void		add_elem(t_vector *vect, Elem element, int pos)
 		vect->capacity = new_capacity;
 	}
 	vect->elemente[pos] = element;
-	if (pos > vect->size)
+	if (pos == vect->size)
 		vect->size++;
 }
 

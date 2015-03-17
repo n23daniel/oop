@@ -147,14 +147,62 @@ int	mod_exp_ui()
 	return (1);
 }
 
-void	search_exp_ui()
+int	sort_exp_ui()
 {
-	
+	char		line[50];
+	t_vector	*vect;
+
+	while (1)
+	{
+		printf("Sorteaza:\n");
+		printf("1-> Vechi->Nou\n");//dupa data
+		printf("2-> Nou->Vechi\n");
+		printf("3-> A-Z\n");//dupa type
+		printf("4-> Z-A\n");
+		printf("5-> Valoare crescator\n");//dupa value
+		printf("6-> Valoare descrescator\n");
+		printf("Alege comanda: ");
+		scanf("%s", line);
+		if (strcmp(line, "1") == 0)
+		{
+			vect = sort_by_date(1);
+			break ;
+		}
+		else if (strcmp(line, "2") == 0)
+		{
+			vect = sort_by_date(-1);
+			break ;
+		}
+		else if (strcmp(line, "3") == 0)
+		{
+			vect = sort_by_type(1);
+			break ;
+		}
+		else if (strcmp(line, "4") == 0)
+		{
+			vect = sort_by_type(-1);
+			break ;
+		}
+		else if (strcmp(line, "5") == 0)
+		{
+			vect = sort_by_value(1);
+			break ;
+		}
+		else if (strcmp(line, "6") == 0)
+		{
+			vect = sort_by_value(-1);
+			break ;
+		}
+		else
+			printf("Comada inexistenta\n");
+	}
+	print_vector(vect);
+	return (0);
 }
 
-void	sort_exp_ui()
+int	search_exp_ui()
 {
-	
+	return (0);
 }
 
 void	show_all_ui()
